@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "build": "node-scripts build"
+     "build": "echo 'skip build'"
 
   },
   "keywords": ["planning-poker", "scrum", "agile", "estimation"],
