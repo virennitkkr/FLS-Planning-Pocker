@@ -1,5 +1,5 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": "backend/dist",
-  "framework": null
+  "outputDirectory": "build",
+  "framework": "create-node-app"
 }
