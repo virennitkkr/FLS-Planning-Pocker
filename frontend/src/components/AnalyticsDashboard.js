@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import axios from 'axios';
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+
 const AnalyticsDashboard = ({ roomId }) => {
   const [analytics, setAnalytics] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -10,7 +12,7 @@ const AnalyticsDashboard = ({ roomId }) => {
   const fetchAnalytics = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`http://localhost:5000/api/analytics/${roomId}`);
+      const response = await axios.get(`${API_URL}/api/analytics/${roomId}`);
       setAnalytics(response.data.analytics);
     } catch (error) {
       console.error('Error fetching analytics:', error);

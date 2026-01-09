@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import axios from 'axios';
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+
 const AIInsightPanel = ({ roomId }) => {
   const [insight, setInsight] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -9,7 +11,7 @@ const AIInsightPanel = ({ roomId }) => {
   const fetchInsight = async () => {
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:5000/api/ai-insight', {
+      const response = await axios.post(`${API_URL}/api/ai-insight`, {
         roomId,
         storyDescription: 'Current story being estimated'
       });
